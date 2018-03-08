@@ -1,0 +1,17 @@
+.HA_VERSION
+.cloud
+.uuid
+deps
+home-assistant_v2.db
+secrets.yaml
+secrets
+tts
+*.log
+*.conf
+*.pid
+*.crt
+*.key
+__pycache__
+*.state
+*.conf
+

@@ -1,7 +1,7 @@
 """
-@ Author      : Jason Hong
-@ Description : Body Detector in OBLink - It obtain the body detected sensor from the obox
-@ Notes:        Copy this file and place it in your
+    @ Author      : Jason Hong
+    @ Description : Body Detector in OBLink - It obtain the body detected sensor from the obox
+    @ Notes:        Copy this file and place it in your
                 "Home Assistant Config folder\custom_components\sensor\" folder
                 You may have to install two additional packages
                 ...
@@ -9,7 +9,6 @@
                 dow, dow_change_pct, dow_change, nasdaq, nasdaq_change_pct, nasdaq_change
                 Check the configuration in sensor.yaml (search for onBrightLink).
 """
-
 
 from homeassistant.helpers.entity import Entity
 

@@ -1,0 +1,7 @@
+intent_test:  # Intent type
+  speech:
+    text: Hello from an intent!
+  action:
+    service: system_log.write
+    data:
+      message: Hello from an intent!

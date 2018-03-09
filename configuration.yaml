@@ -15,7 +15,7 @@ homeassistant:
   packages: !include_dir_named packages
 
 # Show links to resources in log and frontend
-introduction:
+# introduction:
 
 # Enables the frontend
 frontend:
@@ -30,6 +30,11 @@ http:
   base_url: !secret http_base_url
   ssl_certificate: !secret http_ssl_certificate
   ssl_key: !secret http_ssl_key
+  # If using reverse proxy, comment these
+  # trusted_networks:
+  #   - 127.0.0.1
+  # ip_ban_enabled: True
+  # login_attempts_threshold: 3
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -45,6 +50,9 @@ discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
+  intents:
+    intent_script:
+      intent_test
 
 # Enables support for tracking state changes over time
 history:
@@ -59,14 +67,13 @@ map:
 sun:
 
 # Weather prediction
-sensor:
-  - platform: yr
+sensor: !include_dir_list device/sensor
 
 # Text to speech
 tts:
-  - platform: google
-  # - platform: microsoft
-  #   api_key: d18122e147ba49ecb07f79dad83f7a6c
+  # - platform: google
+  - platform: microsoft
+    api_key: d18122e147ba49ecb07f79dad83f7a6c
 
 # Cloud
 cloud:
@@ -76,6 +83,16 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
-#extensions
 homekit: !include homekit.yaml
+
 # duckdns: !include duckdns.yaml
+
+intent_script: !include intent_scripts.yaml
+
+notify:
+
+media_extractor:
+
+input_select: !include device/input/input_select.yaml
+input_boolean: !include device/input/input_boolean.yaml
+input_number: !include device/input/input_number.yaml

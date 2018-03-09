@@ -8,12 +8,21 @@ secrets
 tts
 *.log
 *.conf
-*.pid
 *.crt
 *.key
+*.pid
 __pycache__
+
+ip_bans.yaml
+
+# homekit
 *.state
 *.conf
+
+# Run helper
 frp
 shell
 
+# IDE project
+.vscode
+.idea
